@@ -3,20 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t uday/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t hebbaruday/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true uday/react-test npm run test -- --coverage
+  - docker run -e CI=true hebbaruday/react-test npm run test -- --coverage
 after_success:
- - docker build -t uday/multi-client ./client
- - docker build -t uday/multi-nginx ./nginx
- - docker build -t uday/multi-server ./server
- - docker build -t uday/multi-wroker ./worker
+ - docker build -t hebbaruday/multi-client ./client
+ - docker build -t hebbaruday/multi-nginx ./nginx
+ - docker build -t hebbaruday/multi-server ./server
+ - docker build -t hebbaruday/multi-wroker ./worker
 
 # log in to the docker CLI
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
- - docker push uday/multi-client
- - docker push uday/multi-nginx
- - docker push uday/multi-server
- - docker push uday/multi-wroker
+ - docker push hebbaruday/multi-client
+ - docker push hebbaruday/multi-nginx
+ - docker push hebbaruday/multi-server
+ - docker push hebbaruday/multi-wroker
 
