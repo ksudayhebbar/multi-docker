@@ -20,3 +20,16 @@ after_success:
  - docker push hebbaruday/multi-server
  - docker push hebbaruday/multi-wroker
 
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-900079224734"
+  bucket_path: "docker"
+  on:
+    branch: master      
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: 
+      secure: $AWS_SECRET_KEY
