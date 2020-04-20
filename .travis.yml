@@ -21,7 +21,6 @@ after_success:
  - docker push hebbaruday/multi-wroker
 
 deploy:
-  edge: true
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker"
