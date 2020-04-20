@@ -26,7 +26,7 @@
         {
         "name": "nginx",
         "image": "hebbaruday/multi-nginx",
-        "hostname": "worker",
+        "hostname": "nginx",
         "essential": true,
         
         "portMappings" :[
