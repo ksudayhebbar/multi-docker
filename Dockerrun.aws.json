@@ -1,5 +1,5 @@
 {
-    "AWSEBDocekrrunVersion":2,
+    "AWSEBDockerrunVersion":2,
     "containerDefinitions": 
     [ 
         {
