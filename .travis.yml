@@ -11,14 +11,14 @@ after_success:
  - docker build -t hebbaruday/multi-client ./client
  - docker build -t hebbaruday/multi-nginx ./nginx
  - docker build -t hebbaruday/multi-server ./server
- - docker build -t hebbaruday/multi-wroker ./worker
+ - docker build -t hebbaruday/multi-worker ./worker
 
 # log in to the docker CLI
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
  - docker push hebbaruday/multi-client
  - docker push hebbaruday/multi-nginx
  - docker push hebbaruday/multi-server
- - docker push hebbaruday/multi-wroker
+ - docker push hebbaruday/multi-worker
 
 deploy:
   edge: true
